@@ -24,8 +24,12 @@ export const ADD_USER = gql`
   }
 `;
 
-export const SAVE_BOOK = gql`
-`;
+// export const SAVE_BOOK = gql`
 
-export const REMOVE_BOOK = gql`
-`;
+// `;
+
+// export const REMOVE_BOOK = gql`
+//     mutation removeBook() {
+
+//     }
+// `;
