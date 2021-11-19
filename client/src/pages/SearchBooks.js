@@ -47,6 +47,7 @@ const SearchBooks = () => {
         title: book.volumeInfo.title,
         description: book.volumeInfo.description,
         image: book.volumeInfo.imageLinks?.thumbnail || '',
+        link: book.volumeInfo.canonicalVolumeLink
       }));
 
       setSearchedBooks(bookData);
@@ -68,6 +69,8 @@ const SearchBooks = () => {
     if (!token) {
       return false;
     }
+
+    console.log(bookToSave);
 
     try {
       const response = await saveBook({
