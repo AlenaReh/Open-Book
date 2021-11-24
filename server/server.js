@@ -18,7 +18,7 @@ server.applyMiddleware({ app });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-console.log("Test Message", process.env.NODE_ENV);
+
 // if we're in production, serve client/build as static assets
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
@@ -29,7 +29,7 @@ if (process.env.NODE_ENV === "production") {
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
-console.log("Test Message 2", db._connectionString);
+// console.log("Test Message 2", db._connectionString);
 
 db.once("open", () => {
   app.listen(PORT, () => {
